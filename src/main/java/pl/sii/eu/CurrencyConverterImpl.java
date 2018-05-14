@@ -18,6 +18,12 @@ public class CurrencyConverterImpl implements CurrencyConverter {
 
     @Override
     public Amount convertToPln(Amount euroAmount){
+
+        if(!new Amount(euroAmount.getValue(),Currency.EUR).equals(euroAmount))
+        {
+            throw new IllegalArgumentException();
+        }
+
         double doubleValue=  Double.longBitsToDouble(euroAmount.getValue());
         return new Amount(
                 Double.doubleToLongBits(
@@ -28,6 +34,10 @@ public class CurrencyConverterImpl implements CurrencyConverter {
 
     @Override
     public Amount convertToEur(Amount plnAmount){
+        if(!new Amount(plnAmount.getValue(),Currency.PLN).equals(plnAmount))
+        {
+            throw new IllegalArgumentException();
+        }
         double doubleValue=  Double.longBitsToDouble(plnAmount.getValue());
         return new Amount(
                 Double.doubleToLongBits(

@@ -12,7 +12,7 @@ public class DuplicateCheckerTest {
     public void testDuplicateChecker(){
         DuplicateCheckerImpl duplicateChecker = new DuplicateCheckerImpl();
         assertTrue(duplicateChecker.hasDuplicateCharacters("ASDFG asdh      erA"));
-        assertFalse(duplicateChecker.hasDuplicateCharacters("ASDFG asdh      erA"));
+        assertFalse(duplicateChecker.hasDuplicateCharacters("ASDFG asdh      erg"));
     }
 
 }

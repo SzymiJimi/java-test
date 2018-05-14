@@ -6,7 +6,7 @@ public class DuplicateCheckerImpl implements DuplicateChecker {
     @Override
     public boolean hasDuplicateCharacters(String input){
 
-        input= input.replaceAll(" ", "");
+        input= input.replaceAll("\\s+", "");
 
         for(int i=0; i<input.length();i++)
         {
